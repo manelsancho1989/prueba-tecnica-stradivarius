@@ -70,3 +70,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 install json server npm install -g json-server
+
+Up json server npx json-server --watch -p 3333 data.json
+
+view json in http://localhost:3333/meetup
+
+install redux npm i react-redux redux redux-thunk
+
+install axios npm i axios

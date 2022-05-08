@@ -1,1 +1,11 @@
+//Types for new meetup
+export const ADD_MEETUP = 'ADD_MEETUP';
+export const ADD_MEETUP_SUCCESS = 'ADD_MEETUP_SUCCESS';
+export const ADD_MEETUP_ERROR = 'ADD_MEETUP_ERROR';
+
+//Types for list meetup
+export const BEGIN_DOWNLOAD_MEETUP = 'BEGIN_DOWNLOAD_MEETUP';
+export const DOWNLOAD_MEETUP_SUCCESS = 'DOWNLOAD_MEETUP_SUCCESS';
+export const DOWNLOAD_MEETUP_ERROR = 'DOWNLOAD_MEETUP_ERROR';
+
 
