@@ -7,31 +7,23 @@ import { ALL_MEETUP_PAGE, FAVORITES_PAGE, NEW_MEETUP_PAGE } from "./utils/consta
 
 import MainNavigation from "./components/layout/MainNavigation";
 import Layout from "./components/layout/Layout";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
-  const [page, setPage] = useState(ALL_MEETUP_PAGE);
-
-  function getCurrentPageComponent() {
-    let currentPageComponent = <AllMeetupsPage />;
-    switch (page) {
-      case FAVORITES_PAGE:
-        currentPageComponent = <FavoritesPage />;
-        break;
-      case NEW_MEETUP_PAGE:
-        currentPageComponent = <NewMeetupsPage />;
-        break;
-      default:
-        currentPageComponent = <AllMeetupsPage />;
-    }
-
-    return currentPageComponent;
-  }
 
   return (
-    <div data-test="app">
-      <MainNavigation setPage={setPage} />
-      <Layout>{getCurrentPageComponent()}</Layout>
-    </div>
+    <Router>
+      <MainNavigation />
+      <div data-test="app">
+        <Layout>
+          <Routes>
+            <Route exact path="/" element={<AllMeetupsPage />} />
+            <Route exact path="/favorite-page" element={<FavoritesPage />} />
+            <Route exact path="/new-meetup" element={<NewMeetupsPage />} />
+          </Routes>
+        </Layout>
+      </div>
+    </Router>
   );
 }
 

@@ -2,6 +2,8 @@ import { ALL_MEETUP_PAGE, FAVORITES_PAGE, NEW_MEETUP_PAGE } from "./../../utils/
 
 import classes from "./MainNavigation.module.css";
 
+import { Link } from 'react-router-dom';
+
 export default function MainNavigation({ setPage }) {
   return (
     <header className={classes.header} data-test="navigation-header">
@@ -9,21 +11,17 @@ export default function MainNavigation({ setPage }) {
       <nav>
         <ul>
           <li>
-            <a href="#" onClick={() => setPage(ALL_MEETUP_PAGE)}>
-              All Meetups
-            </a>
+            <Link to={'/'}>All Meetups</Link>
           </li>
 
           <li>
-            <a href="#" onClick={() => setPage(NEW_MEETUP_PAGE)}>
-              Add New Meetup
-            </a>
+            <Link to={'/new-meetup'}> Add New Meetup</Link>
           </li>
           <li>
-            <a href="#" onClick={() => setPage(FAVORITES_PAGE)}>
+            <Link to={'/favorite-page'}>
               My Favorites
               <span className={classes.badge}>{0}</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
