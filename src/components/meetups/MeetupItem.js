@@ -1,9 +1,18 @@
 import classes from "./MeetupItem.module.css";
 import Card from "../ui/Card";
 
+//Redux
+import { useDispatch } from "react-redux";
+import { updateMeetUpAction } from "../../actions/meetupAction"
 
 export default function MeetupItem({ meetItem }) {
-  const { meetUpURL, meetUpTitle, meetUpAdress, meetUpDescription } = meetItem;
+  const { meetUpURL, meetUpTitle, meetUpAdress, meetUpDescription, id, favorite } = meetItem;
+
+  const dispatch = useDispatch();
+
+  const addTofavorites = id => {
+    dispatch(updateMeetUpAction(id));
+  }
 
   return (
     <li className={classes.item} data-test='meet-up-item'>
@@ -16,11 +25,18 @@ export default function MeetupItem({ meetItem }) {
           <address>{meetUpAdress}</address>
           <p>{meetUpDescription}</p>
         </div>
-        <div className={classes.actions}>
-          <button>Add to favorites</button>
-        </div>
+        {favorite === true ? null :
+          <div className={classes.actions}>
+            <button
+              type="button"
+              onClick={() => addTofavorites(id)}
+            >
+              Add to favorites
+            </button>
+          </div>
+        }
       </Card>
     </li>
   );
-  
+
 }

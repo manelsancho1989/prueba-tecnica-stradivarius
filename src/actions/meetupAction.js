@@ -4,7 +4,13 @@ import {
     ADD_MEETUP_ERROR,
     BEGIN_DOWNLOAD_MEETUP,
     DOWNLOAD_MEETUP_SUCCESS,
-    DOWNLOAD_MEETUP_ERROR
+    DOWNLOAD_MEETUP_ERROR,
+    BEGIN_UPDATE_MEETUP,
+    UPDATE_SUCCESS,
+    UPDATE_ERROR,
+    GET_FAVORITE_MEETUP,
+    GET_FAVORITE_MEETUP_SUCCES,
+    GET_FAVORITE_MEETUP_ERROR
 } from '../utils/constants';
 
 import axiosClient from '../config/axios';
@@ -72,5 +78,63 @@ const dowloadMeetUpSucces = meetUp => ({
 
 const downloadMeetUpError = () => ({
     type: DOWNLOAD_MEETUP_ERROR,
+    payload: true
+});
+
+//Select and Update to favorites
+export function updateMeetUpAction(id) {
+    return async (dispatch) => {
+        dispatch(beginUpdateMeetUp());
+        try {
+            const response = await axiosClient.get('/meetup', { params: { id: id } });
+            let responseData = response.data[0];
+            responseData.favorite = true;
+            const update = await axiosClient.put(`/meetup/${id}`, responseData);
+            dispatch(getMeetUpUpdate(update))
+        } catch (error) {
+            dispatch(updateMeetUpError());
+        }
+    }
+}
+const beginUpdateMeetUp = () => ({
+    type: BEGIN_UPDATE_MEETUP,
+    payload: true
+});
+
+const getMeetUpUpdate = update => ({
+    type: UPDATE_SUCCESS,
+    payload: update
+});
+
+const updateMeetUpError = () => ({
+    type: UPDATE_ERROR,
+    payload: true
+});
+
+//Get favorites MeetUps
+export function getFavoritesMeetUpAction() {
+    return async (dispatch) => {
+        dispatch(getFavoriteMeetUp());
+        try {
+            const response = await axiosClient.get('/meetup', { params: { favorite: true } });
+            dispatch(getFavoriteMeetUpSucces(response.data));
+        } catch (error) {
+            dispatch(favoriteMeetUpError());
+        }
+    }
+}
+
+const getFavoriteMeetUp = () => ({
+    type: GET_FAVORITE_MEETUP,
+    payload: true
+});
+
+const getFavoriteMeetUpSucces = favorite => ({
+    type: GET_FAVORITE_MEETUP_SUCCES,
+    payload: favorite
+});
+
+const favoriteMeetUpError = () => ({
+    type: GET_FAVORITE_MEETUP_ERROR,
     payload: true
 });

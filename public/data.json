@@ -5,7 +5,7 @@
       "meetUpURL": "https://encolombia.com/wp-content/uploads/2012/12/Surf-1.jpg",
       "meetUpAdress": "test",
       "meetUpDescription": "test",
-      "favorite": false,
+      "favorite": true,
       "id": "JsL9m9k"
     },
     {
@@ -13,7 +13,7 @@
       "meetUpURL": "https://encolombia.com/wp-content/uploads/2012/12/Surf-1.jpg",
       "meetUpAdress": "test",
       "meetUpDescription": "test",
-      "favorite": false,
+      "favorite": true,
       "id": "Az4W6ma"
     },
     {
@@ -21,7 +21,7 @@
       "meetUpURL": "https://encolombia.com/wp-content/uploads/2012/12/Surf-1.jpg",
       "meetUpAdress": "test",
       "meetUpDescription": "test",
-      "favorite": false,
+      "favorite": true,
       "id": "vRzUFei"
     },
     {
@@ -29,7 +29,7 @@
       "meetUpURL": "https://encolombia.com/wp-content/uploads/2012/12/Surf-1.jpg",
       "meetUpAdress": "test",
       "meetUpDescription": "test",
-      "favorite": false,
+      "favorite": true,
       "id": "qiHcExy"
     },
     {
@@ -37,7 +37,7 @@
       "meetUpURL": "https://encolombia.com/wp-content/uploads/2012/12/Surf-1.jpg",
       "meetUpAdress": "test",
       "meetUpDescription": "test",
-      "favorite": false,
+      "favorite": true,
       "id": "W_iQYS2"
     },
     {
@@ -45,8 +45,32 @@
       "meetUpURL": "https://encolombia.com/wp-content/uploads/2012/12/Surf-1.jpg",
       "meetUpAdress": "test",
       "meetUpDescription": "test",
-      "favorite": false,
+      "favorite": true,
       "id": "UH6RGSd"
+    },
+    {
+      "meetUpTitle": "test",
+      "meetUpURL": "https://encolombia.com/wp-content/uploads/2012/12/Surf-1.jpg",
+      "meetUpAdress": "test",
+      "meetUpDescription": "test",
+      "favorite": false,
+      "id": "yIb2z_b"
+    },
+    {
+      "meetUpTitle": "manel",
+      "meetUpURL": "https://encolombia.com/wp-content/uploads/2012/12/Surf-1.jpg",
+      "meetUpAdress": "manel",
+      "meetUpDescription": "manel",
+      "favorite": true,
+      "id": "yaRgQ-v"
+    },
+    {
+      "meetUpTitle": "hola",
+      "meetUpURL": "https://encolombia.com/wp-content/uploads/2012/12/Surf-1.jpg",
+      "meetUpAdress": "hola",
+      "meetUpDescription": "hola",
+      "favorite": false,
+      "id": "lX-6kct"
     }
   ]
 }

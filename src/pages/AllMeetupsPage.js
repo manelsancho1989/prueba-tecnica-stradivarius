@@ -19,7 +19,7 @@ export default function AllMeetupsPage() {
   return (
     <section>
       <h1>All Meetups</h1>
-      
+
       {error ? <p>Hubo un error</p> : null}
       {loading ? <p>Cargando</p> : null}
 
